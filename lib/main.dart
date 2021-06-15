@@ -47,7 +47,6 @@ class _quizbodyState extends State<quizbody> {
   ];
   // Questions q1 =new Questions(fullQuestion:"Some cats are actually allergic to humans",answer:false);
 
-
   // List<bool> questionAnswer=[false,true] ;
   int questionNumber = 0;
 
