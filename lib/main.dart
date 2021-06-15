@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quizzer/questions.dart';
+import 'questions.dart';
+import 'querstions_bank.dart';
+
 
 void main() =>runApp(quiz());
 
@@ -31,23 +33,13 @@ class quizbody extends StatefulWidget {
 
 class _quizbodyState extends State<quizbody> {
 
+  QuizCircuit Quizbank= QuizCircuit();
+
   List<Icon> scorekeeper=[
     Icon(Icons.close_sharp,color: Colors.redAccent,),
     Icon(Icons.done_sharp,color: Colors.lightGreen,)
   ];
 
-  // List<String> questions =['Some cats are actually allergic to humans',
-  //   '1','2','3'
-  // ];
-  List<Questions> questions=[
-    Questions(fullQuestion:'d',answer:true),
-    Questions(fullQuestion:'e',answer:false),
-    Questions(fullQuestion:'f',answer:false),
-    Questions(fullQuestion:'g',answer:true),
-  ];
-  // Questions q1 =new Questions(fullQuestion:"Some cats are actually allergic to humans",answer:false);
-
-  // List<bool> questionAnswer=[false,true] ;
   int questionNumber = 0;
 
   @override
@@ -61,7 +53,7 @@ class _quizbodyState extends State<quizbody> {
             child: Padding(
               padding: EdgeInsets.all(2),
               child: Center(
-                  child: Text(questions[questionNumber].fullQuestion,
+                  child: Text(Quizbank.getQuestionText(questionNumber),
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 25),
                   )
@@ -77,7 +69,7 @@ class _quizbodyState extends State<quizbody> {
                   style: TextStyle(color: Colors.white,fontSize: 35),
                 ),
                 onPressed: () {
-                  bool correctAnswer =questionAnswer[questionNumber] ;
+                  bool correctAnswer =Quizbank.questions[questionNumber].questionAnswer ;
                   if(correctAnswer==true){
                     print("user got right answer");
                   }else
