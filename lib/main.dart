@@ -11,10 +11,11 @@ class quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     // int score=0;
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.cyanAccent,
-        title: Text("Quiz      score="),
+          debugShowCheckedModeBanner: false,
+          home: Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.cyanAccent,
+              title: Text("Quiz      score="),
       ),
       body: quizbody(),
     ));
