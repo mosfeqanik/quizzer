@@ -17,7 +17,7 @@ class quiz extends StatelessWidget {
               backgroundColor: Colors.cyanAccent,
               title: Text("Quiz      score="),
       ),
-      body: quizbody(),
+            body: quizbody(),
     ));
   }
 }
@@ -78,12 +78,12 @@ class _quizbodyState extends State<quizbody> {
             )),
         Expanded(
             child: Container(
-          margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          color: Colors.green,
-          child: TextButton(
-            child: Text(
-              'সত্য',
-              style: TextStyle(color: Colors.white, fontSize: 35),
+              margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.green,
+              child: TextButton(
+                child: Text(
+                  'সত্য',
+                   style: TextStyle(color: Colors.white, fontSize: 35),
             ),
             onPressed: () {
               checkAnswer(true);
